@@ -33,7 +33,7 @@ public:
         constructor_template->SetClassName(String::NewSymbol("LMDBEnv"));
         NODE_SET_PROTOTYPE_METHOD(constructor_template, "readerCheck", ReaderCheck);
         NODE_SET_PROTOTYPE_METHOD(constructor_template, "sync", Sync);
-        target->Set(String::NewSymbol("LMDBEnv"), constructor_template->GetFunction());
+        target->Set(String::NewSymbol("Env"), constructor_template->GetFunction());
     }
     static Handle<Value> New(const Arguments& args) {
         HandleScope scope;
@@ -295,7 +295,7 @@ public:
         NODE_SET_PROTOTYPE_METHOD(constructor_template, "incr", Incr);
         NODE_SET_PROTOTYPE_METHOD(constructor_template, "del", Del);
         NODE_SET_PROTOTYPE_METHOD(constructor_template, "select", Select);
-        target->Set(String::NewSymbol("LMDB"), constructor_template->GetFunction());
+        target->Set(String::NewSymbol("Database"), constructor_template->GetFunction());
 
     }
 
