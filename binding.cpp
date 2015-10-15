@@ -4,8 +4,7 @@
 //
 
 #include "bkjs.h"
-#include "bklib.h"
-#include "bklog.h"
+#include <errno.h>
 
 #include <lmdb.h>
 
