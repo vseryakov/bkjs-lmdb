@@ -2,6 +2,20 @@
 
 # Usage
 
+```javascript
+  var lmdb = require("bkjs-lmb");
+  var env = new bklmdb.Env({ path: "/tmp" });
+  var db = new lmdb.Database(env, { name: "test", flags: lmdb.MDB_CREATE }, function(err) {
+
+     this.put("key1", "value1");
+     this.put("key2", "value2");
+     this.select("key", "key", { begins_with: 1 }, function(err, rows) {
+       console.log(rows);
+     });
+
+  });
+```
+
 ## Env class
  - `new Env(options)` - create new environment
  - The options properties:
